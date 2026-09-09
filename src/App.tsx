@@ -16,80 +16,157 @@ interface LiteratureEntry {
 const DEMO_ENTRIES: LiteratureEntry[] = [
   {
     id: 1,
-    workTitle: '[DEMO] Sample Classical Work',
-    author: '[DEMO] Sample Author',
-    category: '[DEMO] Sample Category',
-    tamilText: '[DEMO] நட்பு தொடர்பான மாதிரி தமிழ் வரி — இது உண்மையான குறள் அல்ல',
-    tamilExplanation: '[DEMO] இது ஒரு மாதிரி விளக்கம். உண்மையான உரையை இங்கே பின்னர் சேர்க்க வேண்டும்.',
-    englishExplanation: '[DEMO] This is a placeholder explanation about friendship. Replace with verified content.',
-    themes: ['Friendship', 'நட்பு'],
-    citation: '[DEMO] Chapter 1, Verse 1',
-    sourceStatus: 'Demo source — verify before publishing',
+    workTitle: 'திருக்குறள்',
+    author: 'திருவள்ளுவர்',
+    category: 'அறத்துப்பால்',
+    tamilText: 'அகர முதல எழுத்தெல்லாம் ஆதி\nபகவன் முதற்றே உலகு.',
+    tamilExplanation:
+      'எழுத்துக்களுக்கு “அ” எப்படி முதலாக இருக்கிறதோ, அதுபோல் உலகிற்கு ஆதிபகவன் முதன்மையானவர் என்று குறள் கூறுகிறது.',
+    englishExplanation:
+      'Just as the letter “A” is the beginning of all letters, the Supreme Being is considered the beginning of the world.',
+    themes: ['Ethics', 'அறம்', 'Spirituality'],
+    citation: 'கடவுள் வாழ்த்து — குறள் 1',
+    sourceStatus: 'Source: Project Madurai',
   },
   {
     id: 2,
-    workTitle: '[DEMO] Sample Classical Work',
-    author: '[DEMO] Sample Author',
-    category: '[DEMO] Sample Category',
-    tamilText: '[DEMO] கல்வி தொடர்பான மாதிரி தமிழ் வரி — இது உண்மையான குறள் அல்ல',
-    tamilExplanation: '[DEMO] கல்வியின் முக்கியத்துவம் பற்றிய மாதிரி விளக்கம்.',
-    englishExplanation: '[DEMO] This is a placeholder explanation about learning. Replace with verified content.',
-    themes: ['Learning', 'கல்வி'],
-    citation: '[DEMO] Chapter 2, Verse 5',
-    sourceStatus: 'Demo source — verify before publishing',
+    workTitle: 'திருக்குறள்',
+    author: 'திருவள்ளுவர்',
+    category: 'அறத்துப்பால்',
+    tamilText: 'கற்றதனால் ஆய பயனென்கொல் வாலறிவன்\nநற்றாள் தொழாஅர் எனின்.',
+    tamilExplanation:
+      'மிகுந்த அறிவுடைய இறைவனின் நல்ல திருவடிகளை வணங்காவிட்டால், ஒருவர் கற்ற கல்வியால் என்ன பயன் என்று வள்ளுவர் கேட்கிறார்.',
+    englishExplanation:
+      'Learning has little value if a person does not recognize and respect the feet of the wise and supreme source of knowledge.',
+    themes: ['Learning', 'கல்வி', 'Spirituality'],
+    citation: 'கடவுள் வாழ்த்து — குறள் 2',
+    sourceStatus: 'Source: Project Madurai',
   },
   {
     id: 3,
-    workTitle: '[DEMO] Sample Classical Work',
-    author: '[DEMO] Sample Author',
-    category: '[DEMO] Sample Category',
-    tamilText: '[DEMO] நீதி தொடர்பான மாதிரி தமிழ் வரி — இது உண்மையான குறள் அல்ல',
-    tamilExplanation: '[DEMO] நெறிமுறைகள் பற்றிய மாதிரி விளக்கம்.',
-    englishExplanation: '[DEMO] This is a placeholder explanation about ethics. Replace with verified content.',
-    themes: ['Ethics'],
-    citation: '[DEMO] Chapter 3, Verse 12',
-    sourceStatus: 'Demo source — verify before publishing',
+    workTitle: 'திருக்குறள்',
+    author: 'திருவள்ளுவர்',
+    category: 'அறத்துப்பால்',
+    tamilText: 'மலர்மிசை ஏகினான் மாணடி சேர்ந்தார்\nநிலமிசை நீடுவாழ் வார்.',
+    tamilExplanation:
+      'மலரின் மேல் வீற்றிருக்கும் இறைவனின் சிறந்த திருவடிகளைச் சார்ந்தவர்கள் உலகில் நீண்ட சிறப்பான வாழ்வு வாழ்வார்கள்.',
+    englishExplanation:
+      'Those who follow the noble feet of the divine one will live a long and meaningful life in this world.',
+    themes: ['Spirituality', 'Virtue', 'அறம்'],
+    citation: 'கடவுள் வாழ்த்து — குறள் 3',
+    sourceStatus: 'Source: Project Madurai',
   },
   {
     id: 4,
-    workTitle: '[DEMO] Sample Classical Work',
-    author: '[DEMO] Sample Author',
-    category: '[DEMO] Sample Category',
-    tamilText: '[DEMO] தலைமை தொடர்பான மாதிரி தமிழ் வரி — இது உண்மையான குறள் அல்ல',
-    tamilExplanation: '[DEMO] தலைமைத்துவம் பற்றிய மாதிரி விளக்கம்.',
-    englishExplanation: '[DEMO] This is a placeholder explanation about leadership. Replace with verified content.',
-    themes: ['Leadership'],
-    citation: '[DEMO] Chapter 4, Verse 8',
-    sourceStatus: 'Demo source — verify before publishing',
+    workTitle: 'திருக்குறள்',
+    author: 'திருவள்ளுவர்',
+    category: 'அறத்துப்பால்',
+    tamilText: 'வேண்டுதல் வேண்டாமை இலானடி சேர்ந்தார்க்கு\nயாண்டும் இடும்பை இல.',
+    tamilExplanation:
+      'விருப்பமும் வெறுப்பும் இல்லாத இறைவனின் திருவடிகளைச் சார்ந்தவர்களுக்கு எந்தக் காலத்திலும் துன்பம் இல்லை.',
+    englishExplanation:
+      'Those who follow the feet of the one who is beyond desire and dislike are protected from suffering.',
+    themes: ['Spirituality', 'Peace', 'அறம்'],
+    citation: 'கடவுள் வாழ்த்து — குறள் 4',
+    sourceStatus: 'Source: Project Madurai',
   },
   {
     id: 5,
-    workTitle: '[DEMO] Sample Classical Work',
-    author: '[DEMO] Sample Author',
-    category: '[DEMO] Sample Category',
-    tamilText: '[DEMO] அன்பு தொடர்பான மாதிரி தமிழ் வரி — இது உண்மையான குறள் அல்ல',
-    tamilExplanation: '[DEMO] அன்பின் மதிப்பு பற்றிய மாதிரி விளக்கம்.',
-    englishExplanation: '[DEMO] This is a placeholder explanation about love. Replace with verified content.',
-    themes: ['Love'],
-    citation: '[DEMO] Chapter 5, Verse 3',
-    sourceStatus: 'Demo source — verify before publishing',
+    workTitle: 'திருக்குறள்',
+    author: 'திருவள்ளுவர்',
+    category: 'அறத்துப்பால்',
+    tamilText: 'இருள்சேர் இருவினையும் சேரா இறைவன்\nபொருள்சேர் புகழ்புரிந்தார் மாட்டு.',
+    tamilExplanation:
+      'இறைவனின் உண்மையான புகழை போற்றுகிறவர்களை அறியாமையால் ஏற்படும் நல்வினை, தீவினை ஆகிய இருவகை வினைகளும் பற்றாது.',
+    englishExplanation:
+      'Those who truly praise the divine are freed from the effects of the two kinds of actions associated with ignorance.',
+    themes: ['Spirituality', 'Virtue', 'அறம்'],
+    citation: 'கடவுள் வாழ்த்து — குறள் 5',
+    sourceStatus: 'Source: Project Madurai',
   },
   {
     id: 6,
-    workTitle: '[DEMO] Sample Classical Work II',
-    author: '[DEMO] Sample Author II',
-    category: '[DEMO] Sample Category',
-    tamilText: '[DEMO] நட்பு மற்றும் நீதி தொடர்பான இரண்டாவது மாதிரி வரி',
-    tamilExplanation: '[DEMO] நல்ல நண்பர்களைத் தேர்ந்தெடுப்பது பற்றிய மாதிரி விளக்கம்.',
-    englishExplanation: '[DEMO] A second placeholder example touching on friendship and ethics together.',
-    themes: ['Friendship', 'Ethics', 'நட்பு'],
-    citation: '[DEMO] Chapter 1, Verse 9',
-    sourceStatus: 'Demo source — verify before publishing',
+    workTitle: 'திருக்குறள்',
+    author: 'திருவள்ளுவர்',
+    category: 'அறத்துப்பால்',
+    tamilText: 'பொறிவாயில் ஐந்தவித்தான் பொய்தீர் ஒழுக்க\nநெறிநின்றார் நீடுவாழ் வார்.',
+    tamilExplanation:
+      'ஐம்புலன்களையும் கட்டுப்படுத்திய இறைவனைப் போற்றி, பொய்யற்ற ஒழுக்க நெறியில் வாழ்பவர்கள் சிறப்புடன் நீண்ட காலம் வாழ்வார்கள்.',
+    englishExplanation:
+      'Those who follow a truthful and disciplined way of life, controlling their five senses, will live with lasting goodness.',
+    themes: ['Discipline', 'ஒழுக்கம்', 'Virtue'],
+    citation: 'கடவுள் வாழ்த்து — குறள் 6',
+    sourceStatus: 'Source: Project Madurai',
+  },
+  {
+    id: 7,
+    workTitle: 'திருக்குறள்',
+    author: 'திருவள்ளுவர்',
+    category: 'அறத்துப்பால்',
+    tamilText: 'தனக்குவமை இல்லாதான் தாள்சேர்ந்தார்க் கல்லால்\nமனக்கவலை மாற்றல் அரிது.',
+    tamilExplanation:
+      'தனக்கு இணையானவர் இல்லாத இறைவனின் திருவடிகளைச் சார்ந்தவர்களைத் தவிர, மற்றவர்களுக்கு மனக்கவலையை முழுமையாக நீக்குவது கடினம்.',
+    englishExplanation:
+      'It is difficult to overcome deep mental worries without seeking the support and guidance of the incomparable divine.',
+    themes: ['Peace', 'Spirituality', 'மன அமைதி'],
+    citation: 'கடவுள் வாழ்த்து — குறள் 7',
+    sourceStatus: 'Source: Project Madurai',
+  },
+  {
+    id: 8,
+    workTitle: 'திருக்குறள்',
+    author: 'திருவள்ளுவர்',
+    category: 'அறத்துப்பால்',
+    tamilText: 'அறவாழி அந்தணன் தாள்சேர்ந்தார்க் கல்லால்\nபிறவாழி நீந்தல் அரிது.',
+    tamilExplanation:
+      'அறக்கடலாக விளங்கும் இறைவனின் திருவடிகளைச் சார்ந்தவர்களைத் தவிர, பிறவியாகிய பெருங்கடலைக் கடப்பது கடினம்.',
+    englishExplanation:
+      'Those who follow the feet of the divine embodiment of virtue can overcome the great difficulties of worldly existence.',
+    themes: ['Virtue', 'அறம்', 'Spirituality'],
+    citation: 'கடவுள் வாழ்த்து — குறள் 8',
+    sourceStatus: 'Source: Project Madurai',
+  },
+  {
+    id: 9,
+    workTitle: 'திருக்குறள்',
+    author: 'திருவள்ளுவர்',
+    category: 'அறத்துப்பால்',
+    tamilText: 'கோளில் பொறியின் குணமிலவே எண்குணத்தான்\nதாளை வணங்காத் தலை.',
+    tamilExplanation:
+      'எட்டு சிறப்புக் குணங்களைக் கொண்ட இறைவனின் திருவடிகளை வணங்காத மனிதனின் தலை, பயனற்ற புலன்களைப் போன்றது.',
+    englishExplanation:
+      'A person who does not respect the divine source of virtue is compared to a head that lacks the proper qualities and purpose.',
+    themes: ['Virtue', 'அறம்', 'Spirituality'],
+    citation: 'கடவுள் வாழ்த்து — குறள் 9',
+    sourceStatus: 'Source: Project Madurai',
+  },
+  {
+    id: 10,
+    workTitle: 'திருக்குறள்',
+    author: 'திருவள்ளுவர்',
+    category: 'அறத்துப்பால்',
+    tamilText: 'பிறவிப் பெருங்கடல் நீந்துவர் நீந்தார்\nஇறைவன் அடிசேரா தார்.',
+    tamilExplanation:
+      'இறைவனின் திருவடிகளைச் சார்ந்தவர்கள் மட்டுமே பிறவியாகிய பெருங்கடலைக் கடக்க முடியும்; அவரைச் சாராதவர்கள் கடக்க முடியாது.',
+    englishExplanation:
+      'Those who follow the feet of the divine can cross the great ocean of worldly existence, while those who do not cannot.',
+    themes: ['Spirituality', 'Virtue', 'அறம்'],
+    citation: 'கடவுள் வாழ்த்து — குறள் 10',
+    sourceStatus: 'Source: Project Madurai',
   },
 ];
 
 const EXAMPLE_SEARCHES = ['Friendship', 'Learning', 'Ethics', 'நட்பு', 'கல்வி'];
-const THEMES = ['Ethics', 'Friendship', 'Learning', 'Leadership', 'Love'];
+const THEMES = [
+  'Ethics',
+  'Friendship',
+  'Learning',
+  'Leadership',
+  'Love',
+  'அறம்',
+  'கல்வி',
+  'Spirituality',
+];
 
 function App() {
   const [query, setQuery] = useState('');
@@ -188,7 +265,9 @@ function App() {
 
       <section className="results-section">
         {filteredResults.length === 0 ? (
-          <p className="no-results">No results found. Try a different search term or theme.</p>
+          <p className="no-results">
+            No results found. Try a different search term or theme.
+          </p>
         ) : (
           <div className="results-list">
             {filteredResults.map((entry) => (
@@ -214,15 +293,21 @@ function App() {
                 </div>
 
                 <div className="meta-row">
-                  <span><strong>Work:</strong> {entry.workTitle}</span>
-                  <span><strong>Author:</strong> {entry.author}</span>
-                  <span><strong>Category:</strong> {entry.category}</span>
-                  <span><strong>Reference:</strong> {entry.citation}</span>
+                  <span>
+                    <strong>Work:</strong> {entry.workTitle}
+                  </span>
+                  <span>
+                    <strong>Author:</strong> {entry.author}
+                  </span>
+                  <span>
+                    <strong>Category:</strong> {entry.category}
+                  </span>
+                  <span>
+                    <strong>Reference:</strong> {entry.citation}
+                  </span>
                 </div>
 
-                <div className="source-status">
-                  {entry.sourceStatus}
-                </div>
+                <div className="source-status">{entry.sourceStatus}</div>
               </article>
             ))}
           </div>
@@ -232,11 +317,10 @@ function App() {
       <section className="about-section">
         <h2>About</h2>
         <p>
-          Tamil Scholar AI is currently displaying demo placeholder entries only.
-          None of the Tamil text, explanations, sources, or references shown on this
-          page are verified Classical Tamil literature. Every citation, verse, and
-          source reference must be checked against the original, authoritative source
-          before this content is published or relied upon in any way.
+          Tamil Scholar AI currently contains the first 10 Thirukkural verses
+          from the chapter கடவுள் வாழ்த்து. The original Tamil text is sourced
+          from Project Madurai. The explanations and themes are simplified
+          descriptions intended to help readers understand the verses.
         </p>
       </section>
     </div>

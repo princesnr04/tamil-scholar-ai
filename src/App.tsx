@@ -1,69 +1,90 @@
 import { useState } from 'react';
 
-interface KuralResult {
+interface LiteratureEntry {
   id: number;
+  workTitle: string;
+  author: string;
+  category: string;
   tamilText: string;
   tamilExplanation: string;
   englishExplanation: string;
   themes: string[];
-  sourceWork: string;
-  chapterVerse: string;
+  citation: string;
+  sourceStatus: string;
 }
 
-const DEMO_RESULTS: KuralResult[] = [
+const DEMO_ENTRIES: LiteratureEntry[] = [
   {
     id: 1,
+    workTitle: '[DEMO] Sample Classical Work',
+    author: '[DEMO] Sample Author',
+    category: '[DEMO] Sample Category',
     tamilText: '[DEMO] நட்பு தொடர்பான மாதிரி தமிழ் வரி — இது உண்மையான குறள் அல்ல',
     tamilExplanation: '[DEMO] இது ஒரு மாதிரி விளக்கம். உண்மையான உரையை இங்கே பின்னர் சேர்க்க வேண்டும்.',
     englishExplanation: '[DEMO] This is a placeholder explanation about friendship. Replace with verified content.',
     themes: ['Friendship', 'நட்பு'],
-    sourceWork: '[DEMO] Sample Classical Work',
-    chapterVerse: '[DEMO] Chapter 1, Verse 1',
+    citation: '[DEMO] Chapter 1, Verse 1',
+    sourceStatus: 'Demo source — verify before publishing',
   },
   {
     id: 2,
+    workTitle: '[DEMO] Sample Classical Work',
+    author: '[DEMO] Sample Author',
+    category: '[DEMO] Sample Category',
     tamilText: '[DEMO] கல்வி தொடர்பான மாதிரி தமிழ் வரி — இது உண்மையான குறள் அல்ல',
     tamilExplanation: '[DEMO] கல்வியின் முக்கியத்துவம் பற்றிய மாதிரி விளக்கம்.',
     englishExplanation: '[DEMO] This is a placeholder explanation about learning. Replace with verified content.',
     themes: ['Learning', 'கல்வி'],
-    sourceWork: '[DEMO] Sample Classical Work',
-    chapterVerse: '[DEMO] Chapter 2, Verse 5',
+    citation: '[DEMO] Chapter 2, Verse 5',
+    sourceStatus: 'Demo source — verify before publishing',
   },
   {
     id: 3,
+    workTitle: '[DEMO] Sample Classical Work',
+    author: '[DEMO] Sample Author',
+    category: '[DEMO] Sample Category',
     tamilText: '[DEMO] நீதி தொடர்பான மாதிரி தமிழ் வரி — இது உண்மையான குறள் அல்ல',
     tamilExplanation: '[DEMO] நெறிமுறைகள் பற்றிய மாதிரி விளக்கம்.',
     englishExplanation: '[DEMO] This is a placeholder explanation about ethics. Replace with verified content.',
     themes: ['Ethics'],
-    sourceWork: '[DEMO] Sample Classical Work',
-    chapterVerse: '[DEMO] Chapter 3, Verse 12',
+    citation: '[DEMO] Chapter 3, Verse 12',
+    sourceStatus: 'Demo source — verify before publishing',
   },
   {
     id: 4,
+    workTitle: '[DEMO] Sample Classical Work',
+    author: '[DEMO] Sample Author',
+    category: '[DEMO] Sample Category',
     tamilText: '[DEMO] தலைமை தொடர்பான மாதிரி தமிழ் வரி — இது உண்மையான குறள் அல்ல',
     tamilExplanation: '[DEMO] தலைமைத்துவம் பற்றிய மாதிரி விளக்கம்.',
     englishExplanation: '[DEMO] This is a placeholder explanation about leadership. Replace with verified content.',
     themes: ['Leadership'],
-    sourceWork: '[DEMO] Sample Classical Work',
-    chapterVerse: '[DEMO] Chapter 4, Verse 8',
+    citation: '[DEMO] Chapter 4, Verse 8',
+    sourceStatus: 'Demo source — verify before publishing',
   },
   {
     id: 5,
+    workTitle: '[DEMO] Sample Classical Work',
+    author: '[DEMO] Sample Author',
+    category: '[DEMO] Sample Category',
     tamilText: '[DEMO] அன்பு தொடர்பான மாதிரி தமிழ் வரி — இது உண்மையான குறள் அல்ல',
     tamilExplanation: '[DEMO] அன்பின் மதிப்பு பற்றிய மாதிரி விளக்கம்.',
     englishExplanation: '[DEMO] This is a placeholder explanation about love. Replace with verified content.',
     themes: ['Love'],
-    sourceWork: '[DEMO] Sample Classical Work',
-    chapterVerse: '[DEMO] Chapter 5, Verse 3',
+    citation: '[DEMO] Chapter 5, Verse 3',
+    sourceStatus: 'Demo source — verify before publishing',
   },
   {
     id: 6,
+    workTitle: '[DEMO] Sample Classical Work II',
+    author: '[DEMO] Sample Author II',
+    category: '[DEMO] Sample Category',
     tamilText: '[DEMO] நட்பு மற்றும் நீதி தொடர்பான இரண்டாவது மாதிரி வரி',
     tamilExplanation: '[DEMO] நல்ல நண்பர்களைத் தேர்ந்தெடுப்பது பற்றிய மாதிரி விளக்கம்.',
     englishExplanation: '[DEMO] A second placeholder example touching on friendship and ethics together.',
     themes: ['Friendship', 'Ethics', 'நட்பு'],
-    sourceWork: '[DEMO] Sample Classical Work II',
-    chapterVerse: '[DEMO] Chapter 1, Verse 9',
+    citation: '[DEMO] Chapter 1, Verse 9',
+    sourceStatus: 'Demo source — verify before publishing',
   },
 ];
 
@@ -76,16 +97,19 @@ function App() {
 
   const normalizedQuery = query.trim().toLowerCase();
 
-  const filteredResults = DEMO_RESULTS.filter((result) => {
+  const filteredResults = DEMO_ENTRIES.filter((entry) => {
     const matchesQuery =
       normalizedQuery === '' ||
-      result.tamilText.toLowerCase().includes(normalizedQuery) ||
-      result.tamilExplanation.toLowerCase().includes(normalizedQuery) ||
-      result.englishExplanation.toLowerCase().includes(normalizedQuery) ||
-      result.themes.some((t) => t.toLowerCase().includes(normalizedQuery));
+      entry.tamilText.toLowerCase().includes(normalizedQuery) ||
+      entry.tamilExplanation.toLowerCase().includes(normalizedQuery) ||
+      entry.englishExplanation.toLowerCase().includes(normalizedQuery) ||
+      entry.workTitle.toLowerCase().includes(normalizedQuery) ||
+      entry.author.toLowerCase().includes(normalizedQuery) ||
+      entry.category.toLowerCase().includes(normalizedQuery) ||
+      entry.themes.some((t) => t.toLowerCase().includes(normalizedQuery));
 
     const matchesTheme =
-      activeTheme === null || result.themes.includes(activeTheme);
+      activeTheme === null || entry.themes.includes(activeTheme);
 
     return matchesQuery && matchesTheme;
   });
@@ -167,22 +191,22 @@ function App() {
           <p className="no-results">No results found. Try a different search term or theme.</p>
         ) : (
           <div className="results-list">
-            {filteredResults.map((result) => (
-              <article key={result.id} className="result-card">
-                <p className="tamil-text">{result.tamilText}</p>
+            {filteredResults.map((entry) => (
+              <article key={entry.id} className="result-card">
+                <p className="tamil-text">{entry.tamilText}</p>
 
                 <div className="explanation-block">
                   <h3>Tamil Explanation</h3>
-                  <p>{result.tamilExplanation}</p>
+                  <p>{entry.tamilExplanation}</p>
                 </div>
 
                 <div className="explanation-block">
                   <h3>English Explanation</h3>
-                  <p>{result.englishExplanation}</p>
+                  <p>{entry.englishExplanation}</p>
                 </div>
 
                 <div className="tags-row">
-                  {result.themes.map((theme) => (
+                  {entry.themes.map((theme) => (
                     <span key={theme} className="theme-tag">
                       {theme}
                     </span>
@@ -190,12 +214,14 @@ function App() {
                 </div>
 
                 <div className="meta-row">
-                  <span><strong>Source work:</strong> {result.sourceWork}</span>
-                  <span><strong>Reference:</strong> {result.chapterVerse}</span>
+                  <span><strong>Work:</strong> {entry.workTitle}</span>
+                  <span><strong>Author:</strong> {entry.author}</span>
+                  <span><strong>Category:</strong> {entry.category}</span>
+                  <span><strong>Reference:</strong> {entry.citation}</span>
                 </div>
 
                 <div className="source-status">
-                  Demo source — verify before publishing
+                  {entry.sourceStatus}
                 </div>
               </article>
             ))}

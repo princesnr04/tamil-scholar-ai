@@ -424,3 +424,32 @@ button {
     gap: 5px;
   }
 }
+.source-link-container {
+  margin: 14px 0 10px;
+}
+
+.source-link {
+  color: #7a2e18;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.source-link:hover {
+  color: #4f1d10;
+}
+.copy-citation-button {
+  margin-top: 10px;
+  margin-left: 12px;
+  padding: 8px 14px;
+  border: 1px solid #d3c7b8;
+  border-radius: 8px;
+  background: #f7f1e8;
+  color: #5e5145;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.copy-citation-button:hover {
+  background: #ebe1d3;
+}

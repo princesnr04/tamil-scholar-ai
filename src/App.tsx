@@ -12,9 +12,25 @@ interface LiteratureEntry {
   englishExplanation: string;
   themes: string[];
   citation: string;
+  sourceUrl: string;
   sourceStatus: string;
 }
 
+function copyCitation(entry: LiteratureEntry) {
+  const citation = `${entry.workTitle} — ${entry.citation} — Project Madurai`;
+  navigator.clipboard.writeText(citation);
+}
+
+// Tamil verse text for Kurals 1-20 is copied exactly, character-for-character,
+// from Project Madurai's Unicode Thirukkural edition:
+// https://www.projectmadurai.org/pm_etexts/utf8/pmuni0001.html
+// Chapter 1 (Kurals 1-10): கடவுள் வாழ்த்து
+// Chapter 2 (Kurals 11-20): வான்சிறப்பு
+//
+// IMPORTANT: Only the Tamil verse (tamilText) has been verified against
+// Project Madurai. The Tamil/English explanations below are AI-drafted
+// for this app and have NOT been reviewed by a Tamil literature expert.
+// They must be checked before publishing, same as any other content here.
 const LITERATURE_ENTRIES: LiteratureEntry[] = [
   {
     id: 1,
@@ -22,15 +38,13 @@ const LITERATURE_ENTRIES: LiteratureEntry[] = [
     author: 'திருவள்ளுவர்',
     category: 'அறத்துப்பால்',
     chapter: 'கடவுள் வாழ்த்து',
-    tamilText:
-      'அகர முதல எழுத்தெல்லாம் ஆதி\nபகவன் முதற்றே உலகு.',
-    tamilExplanation:
-      'எழுத்துகளுக்கு அகரம் முதன்மையானது போல, உலகத்திற்கும் இறைவனே முதன்மையானவன்.',
-    englishExplanation:
-      'Just as the letter A is the beginning of all letters, the Divine is considered the beginning of the world.',
-    themes: ['Ethics', 'Learning'],
-    citation: 'திருக்குறள் 1',
-    sourceStatus: 'Source: Project Madurai',
+    tamilText: 'அகர முதல எழுத்தெல்லாம் ஆதி\nபகவன் முதற்றே உலகு.',
+    tamilExplanation: '[AI DRAFT — verify] "அ" என்ற எழுத்து எழுத்துக்களுக்கு முதலாக இருப்பதுபோல, கடவுள் இவ்வுலகிற்கு முதலாக இருக்கிறார் என்பது இக்குறளின் கருத்து.',
+    englishExplanation: '[AI DRAFT — verify] Just as the letter "A" is the first of all letters, God is the first cause of the world.',
+    themes: ['Ethics', 'கடவுள்'],
+    citation: 'திருக்குறள், அதிகாரம் 1, குறள் 1',
+    sourceUrl: 'https://www.projectmadurai.org/pm_etexts/utf8/pmuni0001.html',
+    sourceStatus: 'Tamil text verified — Project Madurai. Explanations unverified — check before publishing.',
   },
   {
     id: 2,
@@ -38,15 +52,13 @@ const LITERATURE_ENTRIES: LiteratureEntry[] = [
     author: 'திருவள்ளுவர்',
     category: 'அறத்துப்பால்',
     chapter: 'கடவுள் வாழ்த்து',
-    tamilText:
-      'கற்றதனால் ஆய பயனென்கொல் வாலறிவன்\nநற்றாள் தொழாஅர் எனின்.',
-    tamilExplanation:
-      'அறிவில் சிறந்த இறைவனின் நல்ல பாதங்களை வணங்காவிட்டால், ஒருவர் கற்ற கல்வியால் என்ன பயன்?',
-    englishExplanation:
-      'Learning has little value if it does not lead a person toward wisdom and goodness.',
-    themes: ['Learning', 'Ethics'],
-    citation: 'திருக்குறள் 2',
-    sourceStatus: 'Source: Project Madurai',
+    tamilText: 'கற்றதனால் ஆய பயனென்கொல் வாலறிவன்\nநற்றாள் தொழாஅர் எனின்.',
+    tamilExplanation: '[AI DRAFT — verify] தூய அறிவுடைய கடவுளின் திருவடிகளை வணங்காதவர்க்குக் கற்ற கல்வியால் என்ன பயன் விளையும் என்று கேட்கும் குறள்.',
+    englishExplanation: '[AI DRAFT — verify] What use is all the learning of one who does not worship the good feet of the Lord of pure wisdom?',
+    themes: ['Learning', 'கல்வி'],
+    citation: 'திருக்குறள், அதிகாரம் 1, குறள் 2',
+    sourceUrl: 'https://www.projectmadurai.org/pm_etexts/utf8/pmuni0001.html',
+    sourceStatus: 'Tamil text verified — Project Madurai. Explanations unverified — check before publishing.',
   },
   {
     id: 3,
@@ -54,15 +66,13 @@ const LITERATURE_ENTRIES: LiteratureEntry[] = [
     author: 'திருவள்ளுவர்',
     category: 'அறத்துப்பால்',
     chapter: 'கடவுள் வாழ்த்து',
-    tamilText:
-      'மலர்மிசை ஏகினான் மாணடி சேர்ந்தார்\nநிலமிசை நீடுவாழ் வார்.',
-    tamilExplanation:
-      'இறைவனின் சிறந்த பாதங்களை மனதில் கொண்டவர்கள் உலகில் நல்ல வாழ்வை வாழ்வார்கள்.',
-    englishExplanation:
-      'Those who follow the noble path of the Divine are said to live a meaningful and lasting life.',
+    tamilText: 'மலர்மிசை ஏகினான் மாணடி சேர்ந்தார்\nநிலமிசை நீடுவாழ் வார்.',
+    tamilExplanation: '[AI DRAFT — verify] மலர் மேல் நடந்தான் எனப்படும் கடவுளின் சிறந்த திருவடிகளை அடைந்தவர்கள் இப்பூமியில் நீண்ட காலம் புகழுடன் வாழ்வார்கள்.',
+    englishExplanation: '[AI DRAFT — verify] Those who reach the great feet of the One who moves on the lotus flower will live long and honored on this earth.',
     themes: ['Ethics'],
-    citation: 'திருக்குறள் 3',
-    sourceStatus: 'Source: Project Madurai',
+    citation: 'திருக்குறள், அதிகாரம் 1, குறள் 3',
+    sourceUrl: 'https://www.projectmadurai.org/pm_etexts/utf8/pmuni0001.html',
+    sourceStatus: 'Tamil text verified — Project Madurai. Explanations unverified — check before publishing.',
   },
   {
     id: 4,
@@ -70,15 +80,13 @@ const LITERATURE_ENTRIES: LiteratureEntry[] = [
     author: 'திருவள்ளுவர்',
     category: 'அறத்துப்பால்',
     chapter: 'கடவுள் வாழ்த்து',
-    tamilText:
-      'வேண்டுதல் வேண்டாமை இலானடி சேர்ந்தார்க்கு\nயாண்டும் இடும்பை இல.',
-    tamilExplanation:
-      'விருப்பமும் வெறுப்பும் இல்லாத இறைவனின் பாதத்தைச் சேர்ந்தவர்களுக்கு துன்பம் குறையும்.',
-    englishExplanation:
-      'Those who follow a path free from excessive attachment and hatred can remain free from much suffering.',
+    tamilText: 'வேண்டுதல் வேண்டாமை இலானடி சேர்ந்தார்க்கு\nயாண்டும் இடும்பை இல.',
+    tamilExplanation: '[AI DRAFT — verify] விருப்பு வெறுப்பு இல்லாத கடவுளின் திருவடிகளை அடைந்தவர்களுக்கு எப்போதும் துன்பம் இல்லை என்பது கருத்து.',
+    englishExplanation: '[AI DRAFT — verify] Those who reach the feet of the One who is free of desire and aversion will never know sorrow.',
     themes: ['Ethics'],
-    citation: 'திருக்குறள் 4',
-    sourceStatus: 'Source: Project Madurai',
+    citation: 'திருக்குறள், அதிகாரம் 1, குறள் 4',
+    sourceUrl: 'https://www.projectmadurai.org/pm_etexts/utf8/pmuni0001.html',
+    sourceStatus: 'Tamil text verified — Project Madurai. Explanations unverified — check before publishing.',
   },
   {
     id: 5,
@@ -86,15 +94,13 @@ const LITERATURE_ENTRIES: LiteratureEntry[] = [
     author: 'திருவள்ளுவர்',
     category: 'அறத்துப்பால்',
     chapter: 'கடவுள் வாழ்த்து',
-    tamilText:
-      'இருள்சேர் இருவினையும் சேரா இறைவன்\nபொருள்சேர் புகழ்புரிந்தார் மாட்டு.',
-    tamilExplanation:
-      'இறைவனின் உண்மையான பெருமையைப் போற்றுபவர்களை அறியாமையும் தீய செயல்களின் விளைவுகளும் பாதிக்காது.',
-    englishExplanation:
-      'Those who follow true goodness are protected from the darkness caused by ignorance and harmful actions.',
+    tamilText: 'இருள்சேர் இருவினையும் சேரா இறைவன்\nபொருள்சேர் புகழ்புரிந்தார் மாட்டு.',
+    tamilExplanation: '[AI DRAFT — verify] கடவுளின் மேன்மையான புகழை விரும்பி நிற்பவரிடம் நல்வினை தீவினை என்னும் இருவினைகளும் அணுகா என்பது கருத்து.',
+    englishExplanation: '[AI DRAFT — verify] The dark twin karmas (good and bad deeds) will not touch those devoted to the true praise of God.',
     themes: ['Ethics'],
-    citation: 'திருக்குறள் 5',
-    sourceStatus: 'Source: Project Madurai',
+    citation: 'திருக்குறள், அதிகாரம் 1, குறள் 5',
+    sourceUrl: 'https://www.projectmadurai.org/pm_etexts/utf8/pmuni0001.html',
+    sourceStatus: 'Tamil text verified — Project Madurai. Explanations unverified — check before publishing.',
   },
   {
     id: 6,
@@ -102,15 +108,13 @@ const LITERATURE_ENTRIES: LiteratureEntry[] = [
     author: 'திருவள்ளுவர்',
     category: 'அறத்துப்பால்',
     chapter: 'கடவுள் வாழ்த்து',
-    tamilText:
-      'பொறிவாயில் ஐந்தவித்தான் பொய்தீர் ஒழுக்க\nநெறிநின்றார் நீடுவாழ் வார்.',
-    tamilExplanation:
-      'ஐம்புலன்களையும் கட்டுப்படுத்தி நல்ல ஒழுக்கத்தில் வாழ்பவர்கள் சிறந்த வாழ்க்கையைப் பெறுவார்கள்.',
-    englishExplanation:
-      'Those who control their senses and live by truthful conduct can lead a stable and meaningful life.',
-    themes: ['Ethics'],
-    citation: 'திருக்குறள் 6',
-    sourceStatus: 'Source: Project Madurai',
+    tamilText: 'பொறிவாயில் ஐந்தவித்தான் பொய்தீர் ஒழுக்க\nநெறிநின்றார் நீடுவாழ் வார்.',
+    tamilExplanation: '[AI DRAFT — verify] ஐம்பொறிகளையும் அடக்கிய கடவுளின் பொய்யற்ற நல்வழியில் நிற்பவர் நெடுங்காலம் வாழ்வர் என்பது கருத்து.',
+    englishExplanation: '[AI DRAFT — verify] Those who follow the flawless path of the One who conquered the five senses will live long, honored lives.',
+    themes: ['Ethics', 'Learning'],
+    citation: 'திருக்குறள், அதிகாரம் 1, குறள் 6',
+    sourceUrl: 'https://www.projectmadurai.org/pm_etexts/utf8/pmuni0001.html',
+    sourceStatus: 'Tamil text verified — Project Madurai. Explanations unverified — check before publishing.',
   },
   {
     id: 7,
@@ -118,15 +122,13 @@ const LITERATURE_ENTRIES: LiteratureEntry[] = [
     author: 'திருவள்ளுவர்',
     category: 'அறத்துப்பால்',
     chapter: 'கடவுள் வாழ்த்து',
-    tamilText:
-      'தனக்குவமை இல்லாதான் தாள்சேர்ந்தார்க் கல்லால்\nமனக்கவலை மாற்றல் அரிது.',
-    tamilExplanation:
-      'ஒப்பற்ற இறைவனின் நல்ல வழியைப் பின்பற்றாமல் மனக்கவலைகளை முழுமையாக நீக்குவது கடினம்.',
-    englishExplanation:
-      'Following a higher and virtuous path can help a person overcome mental worries.',
+    tamilText: 'தனக்குவமை இல்லாதான் தாள்சேர்ந்தார்க் கல்லால்\nமனக்கவலை மாற்றல் அரிது.',
+    tamilExplanation: '[AI DRAFT — verify] ஒப்பற்ற கடவுளின் திருவடிகளை அடைந்தவர்களைத் தவிர மற்றவர்க்கு மனக் கவலையை நீக்குவது கடினம் என்பது கருத்து.',
+    englishExplanation: '[AI DRAFT — verify] Only those who reach the feet of the incomparable One can truly remove the worries of the mind.',
     themes: ['Ethics'],
-    citation: 'திருக்குறள் 7',
-    sourceStatus: 'Source: Project Madurai',
+    citation: 'திருக்குறள், அதிகாரம் 1, குறள் 7',
+    sourceUrl: 'https://www.projectmadurai.org/pm_etexts/utf8/pmuni0001.html',
+    sourceStatus: 'Tamil text verified — Project Madurai. Explanations unverified — check before publishing.',
   },
   {
     id: 8,
@@ -134,15 +136,13 @@ const LITERATURE_ENTRIES: LiteratureEntry[] = [
     author: 'திருவள்ளுவர்',
     category: 'அறத்துப்பால்',
     chapter: 'கடவுள் வாழ்த்து',
-    tamilText:
-      'அறவாழி அந்தணன் தாள்சேர்ந்தார்க் கல்லால்\nபிறவாழி நீந்தல் அரிது.',
-    tamilExplanation:
-      'அறத்தின் பெருங்கடலைப் போன்ற இறைவனின் நல்ல பாதையைப் பின்பற்றாமல் வாழ்க்கையின் துன்பங்களை கடப்பது கடினம்.',
-    englishExplanation:
-      'A life guided by virtue helps a person cross the difficulties of life.',
-    themes: ['Ethics'],
-    citation: 'திருக்குறள் 8',
-    sourceStatus: 'Source: Project Madurai',
+    tamilText: 'அறவாழி அந்தணன் தாள்சேர்ந்தார்க் கல்லால்\nபிறவாழி நீந்தல் அரிது.',
+    tamilExplanation: '[AI DRAFT — verify] அறக்கடலாகிய கடவுளின் திருவடிகளை அடையாதவர்க்குப் பிறவிக் கடலைக் கடத்தல் கடினம் என்பது கருத்து.',
+    englishExplanation: '[AI DRAFT — verify] Only those who reach the feet of the righteous One, an ocean of virtue, can cross the other ocean — the cycle of rebirth.',
+    themes: ['Ethics', 'Learning'],
+    citation: 'திருக்குறள், அதிகாரம் 1, குறள் 8',
+    sourceUrl: 'https://www.projectmadurai.org/pm_etexts/utf8/pmuni0001.html',
+    sourceStatus: 'Tamil text verified — Project Madurai. Explanations unverified — check before publishing.',
   },
   {
     id: 9,
@@ -150,15 +150,13 @@ const LITERATURE_ENTRIES: LiteratureEntry[] = [
     author: 'திருவள்ளுவர்',
     category: 'அறத்துப்பால்',
     chapter: 'கடவுள் வாழ்த்து',
-    tamilText:
-      'கோளில் பொறியில் குணமிலவே எண்குணத்தான்\nதாளை வணங்காத் தலை.',
-    tamilExplanation:
-      'உயர்ந்த நற்குணங்களை மதிக்காத தலைமை அல்லது அறிவு பயனற்றதாகிவிடும்.',
-    englishExplanation:
-      'A person who does not respect higher virtues cannot make good use of knowledge or position.',
-    themes: ['Ethics', 'Leadership'],
-    citation: 'திருக்குறள் 9',
-    sourceStatus: 'Source: Project Madurai',
+    tamilText: 'கோளில் பொறியின் குணமிலவே எண்குணத்தான்\nதாளை வணங்காத் தலை.',
+    tamilExplanation: '[AI DRAFT — verify] எட்டு நற்குணங்களை உடைய கடவுளின் திருவடிகளை வணங்காதவரின் தலை, செயலற்ற பொறிகளைப் போல பயனற்றது என்பது கருத்து.',
+    englishExplanation: '[AI DRAFT — verify] A head that does not bow to the eight-fold-virtued Lord is as useless as a sense organ that cannot perceive.',
+    themes: ['Ethics'],
+    citation: 'திருக்குறள், அதிகாரம் 1, குறள் 9',
+    sourceUrl: 'https://www.projectmadurai.org/pm_etexts/utf8/pmuni0001.html',
+    sourceStatus: 'Tamil text verified — Project Madurai. Explanations unverified — check before publishing.',
   },
   {
     id: 10,
@@ -166,31 +164,26 @@ const LITERATURE_ENTRIES: LiteratureEntry[] = [
     author: 'திருவள்ளுவர்',
     category: 'அறத்துப்பால்',
     chapter: 'கடவுள் வாழ்த்து',
-    tamilText:
-      'பிறவிப் பெருங்கடல் நீந்துவர் நீந்தார்\nஇறைவன் அடிசேரா தார்.',
-    tamilExplanation:
-      'நல்ல வழியைப் பின்பற்றுபவர்கள் வாழ்க்கையின் பெரிய துன்பங்களைக் கடக்க முடியும்.',
-    englishExplanation:
-      'Those who follow a virtuous path can cross the great difficulties of life.',
+    tamilText: 'பிறவிப் பெருங்கடல் நீந்துவர் நீந்தார்\nஇறைவன் அடிசேரா தார்.',
+    tamilExplanation: '[AI DRAFT — verify] கடவுளின் திருவடிகளை அடைந்தவர் பிறவியாகிய பெருங்கடலைக் கடப்பர்; அடையாதவர் கடக்க மாட்டார் என்பது கருத்து.',
+    englishExplanation: '[AI DRAFT — verify] Those who reach the feet of the Lord will cross the great ocean of rebirth; those who do not, will not.',
     themes: ['Ethics'],
-    citation: 'திருக்குறள் 10',
-    sourceStatus: 'Source: Project Madurai',
+    citation: 'திருக்குறள், அதிகாரம் 1, குறள் 10',
+    sourceUrl: 'https://www.projectmadurai.org/pm_etexts/utf8/pmuni0001.html',
+    sourceStatus: 'Tamil text verified — Project Madurai. Explanations unverified — check before publishing.',
   },
-
   {
     id: 11,
     workTitle: 'திருக்குறள்',
     author: 'திருவள்ளுவர்',
     category: 'அறத்துப்பால்',
     chapter: 'வான்சிறப்பு',
-    tamilText:
-      'வான்நின்று உலகம் வழங்கி வருதலால்\nதான்அமிழ்தம் என்றுணரற் பாற்று.',
-    tamilExplanation:
-      'மழை உலகிற்கு வாழ்வையும் வளத்தையும் வழங்குவதால், அது அமுதம் போன்றது.',
-    englishExplanation:
-      'Rain gives life and prosperity to the world, so it can be thought of as nectar.',
+    tamilText: 'வான்நின்று உலகம் வழங்கி வருதலால்\nதான்அமிழ்தம் என்றுணரற் பாற்று.',
+    tamilExplanation: '[AI DRAFT — verify] மழையே உலகத்தை நிலைநிறுத்தி வழங்கி வருவதால், மழையை அமிழ்தமாகவே கருத வேண்டும் என்பது கருத்து.',
+    englishExplanation: '[AI DRAFT — verify] Since rain sustains the world by its constant giving, it should be regarded as nectar (life-giving ambrosia).',
     themes: ['Ethics', 'மழை'],
-    citation: 'திருக்குறள் 11',
+    citation: 'வான்சிறப்பு — குறள் 11',
+    sourceUrl: 'https://www.projectmadurai.org/pm_etexts/utf8/pmuni0001.html',
     sourceStatus: 'Source: Project Madurai',
   },
   {
@@ -199,14 +192,12 @@ const LITERATURE_ENTRIES: LiteratureEntry[] = [
     author: 'திருவள்ளுவர்',
     category: 'அறத்துப்பால்',
     chapter: 'வான்சிறப்பு',
-    tamilText:
-      'துப்பார்க்குத் துப்பாய துப்பாக்கித் துப்பார்க்குத்\nதுப்பாய தூஉம் மழை.',
-    tamilExplanation:
-      'மழை உணவை விளைவிக்க உதவுவதுடன், குடிநீராகவும் பயன்படுகிறது.',
-    englishExplanation:
-      'Rain helps produce food and also provides water needed by living beings.',
+    tamilText: 'துப்பார்க்குத் துப்பாய துப்பாக்கித் துப்பார்க்குத்\nதுப்பாய தூஉம் மழை.',
+    tamilExplanation: '[AI DRAFT — verify] உண்பவர்க்கு உணவாகும் பொருள்களை விளைவித்துத் தானும் உணவாகி நிற்பது மழை என்பது கருத்து.',
+    englishExplanation: '[AI DRAFT — verify] Rain produces the food that people eat, and rain itself becomes a kind of nourishment as well.',
     themes: ['Ethics', 'மழை'],
-    citation: 'திருக்குறள் 12',
+    citation: 'வான்சிறப்பு — குறள் 12',
+    sourceUrl: 'https://www.projectmadurai.org/pm_etexts/utf8/pmuni0001.html',
     sourceStatus: 'Source: Project Madurai',
   },
   {
@@ -215,14 +206,12 @@ const LITERATURE_ENTRIES: LiteratureEntry[] = [
     author: 'திருவள்ளுவர்',
     category: 'அறத்துப்பால்',
     chapter: 'வான்சிறப்பு',
-    tamilText:
-      'விண்இன்று பொய்ப்பின் விரிநீர் வியனுலகத்து\nஉள்நின்று உடற்றும் பசி.',
-    tamilExplanation:
-      'மழை பெய்யாமல் போனால், பெரிய உலகத்திலேயே பசி மக்களைத் துன்புறுத்தும்.',
-    englishExplanation:
-      'If rain fails, hunger can spread throughout the world and cause great suffering.',
+    tamilText: 'விண்இன்று பொய்ப்பின் விரிநீர் வியனுலகத்து\nஉள்நின்று உடற்றும் பசி.',
+    tamilExplanation: '[AI DRAFT — verify] மழை பெய்யாமல் வானம் தவறினால், கடல் சூழ்ந்த பரந்த உலகத்திலும் பசி துன்புறுத்தும் என்பது கருத்து.',
+    englishExplanation: '[AI DRAFT — verify] If the sky fails to give rain, hunger will torment the whole wide world, even one surrounded by seas.',
     themes: ['Ethics', 'மழை'],
-    citation: 'திருக்குறள் 13',
+    citation: 'வான்சிறப்பு — குறள் 13',
+    sourceUrl: 'https://www.projectmadurai.org/pm_etexts/utf8/pmuni0001.html',
     sourceStatus: 'Source: Project Madurai',
   },
   {
@@ -231,14 +220,12 @@ const LITERATURE_ENTRIES: LiteratureEntry[] = [
     author: 'திருவள்ளுவர்',
     category: 'அறத்துப்பால்',
     chapter: 'வான்சிறப்பு',
-    tamilText:
-      'ஏரின் உழாஅர் உழவர் புயல்என்னும்\nவாரி வளங்குன்றிக் கால்.',
-    tamilExplanation:
-      'மழை எனப்படும் நீர்வளம் குறைந்தால், விவசாயிகள் நிலத்தை உழ முடியாது.',
-    englishExplanation:
-      'When rainfall decreases, farmers cannot properly cultivate their fields.',
+    tamilText: 'ஏரின் உழாஅர் உழவர் புயல்என்னும்\nவாரி வளங்குன்றிக் கால்.',
+    tamilExplanation: '[AI DRAFT — verify] மழையாகிய வருவாய் வளம் குறைந்துவிட்டால், உழவர் ஏர் கொண்டு நிலத்தை உழமாட்டார்கள் என்பது கருத்து.',
+    englishExplanation: '[AI DRAFT — verify] When the abundance that comes from rain declines, farmers will no longer plough the land with their ploughs.',
     themes: ['Ethics', 'மழை'],
-    citation: 'திருக்குறள் 14',
+    citation: 'வான்சிறப்பு — குறள் 14',
+    sourceUrl: 'https://www.projectmadurai.org/pm_etexts/utf8/pmuni0001.html',
     sourceStatus: 'Source: Project Madurai',
   },
   {
@@ -247,14 +234,12 @@ const LITERATURE_ENTRIES: LiteratureEntry[] = [
     author: 'திருவள்ளுவர்',
     category: 'அறத்துப்பால்',
     chapter: 'வான்சிறப்பு',
-    tamilText:
-      'கெடுப்பதூஉம் கெட்டார்க்குச் சார்வாய்மற் றாங்கே\nஎடுப்பதூஉம் எல்லாம் மழை.',
-    tamilExplanation:
-      'மழை இல்லாமல் உலகிற்கு அழிவை ஏற்படுத்தவும் முடியும்; மழை பெய்தால் உலகை வளப்படுத்தவும் முடியும்.',
-    englishExplanation:
-      'Rain can cause hardship when it fails, but it can also restore and support life when it comes.',
+    tamilText: 'கெடுப்பதூஉம் கெட்டார்க்குச் சார்வாய்மற் றாங்கே\nஎடுப்பதூஉம் எல்லாம் மழை.',
+    tamilExplanation: '[AI DRAFT — verify] உலகை அழிப்பதும், அழிந்தவர்க்குப் பிறகு மீண்டும் துணையாக நின்று உயர்த்துவதும் எல்லாம் மழையே என்பது கருத்து.',
+    englishExplanation: '[AI DRAFT — verify] It is rain that both destroys (through excess or absence) and later restores and uplifts those who were ruined.',
     themes: ['Ethics', 'மழை'],
-    citation: 'திருக்குறள் 15',
+    citation: 'வான்சிறப்பு — குறள் 15',
+    sourceUrl: 'https://www.projectmadurai.org/pm_etexts/utf8/pmuni0001.html',
     sourceStatus: 'Source: Project Madurai',
   },
   {
@@ -263,14 +248,12 @@ const LITERATURE_ENTRIES: LiteratureEntry[] = [
     author: 'திருவள்ளுவர்',
     category: 'அறத்துப்பால்',
     chapter: 'வான்சிறப்பு',
-    tamilText:
-      'விசும்பின் துளிவீழின் அல்லால்மற் றாங்கே\nபசும்புல் தலைகாண்பு அரிது.',
-    tamilExplanation:
-      'வானிலிருந்து மழைத்துளி விழாமல் இருந்தால், பசும்புல் கூட வளர்வது அரிது.',
-    englishExplanation:
-      'Without rain from the sky, even green grass is difficult to grow.',
+    tamilText: 'விசும்பின் துளிவீழின் அல்லால்மற் றாங்கே\nபசும்புல் தலைகாண்பு அரிது.',
+    tamilExplanation: '[AI DRAFT — verify] வானத்திலிருந்து மழைத்துளி விழுந்தால் அல்லாமல், பசும்புல் தலை காண்பது கூடக் கடினம் என்பது கருத்து.',
+    englishExplanation: '[AI DRAFT — verify] Unless raindrops fall from the sky, it would be hard even to see a single blade of green grass.',
     themes: ['Ethics', 'மழை'],
-    citation: 'திருக்குறள் 16',
+    citation: 'வான்சிறப்பு — குறள் 16',
+    sourceUrl: 'https://www.projectmadurai.org/pm_etexts/utf8/pmuni0001.html',
     sourceStatus: 'Source: Project Madurai',
   },
   {
@@ -279,14 +262,12 @@ const LITERATURE_ENTRIES: LiteratureEntry[] = [
     author: 'திருவள்ளுவர்',
     category: 'அறத்துப்பால்',
     chapter: 'வான்சிறப்பு',
-    tamilText:
-      'நெடுங்கடலும் தன்நீர்மை குன்றும் தடிந்தெழிலி\nதான்நல்கா தாகி விடின்.',
-    tamilExplanation:
-      'மேகங்கள் மழையை வழங்காமல் போனால், பெரிய கடலின் நீரளவும் குறையக்கூடும்.',
-    englishExplanation:
-      'If clouds stop giving rain, even the great ocean can lose some of its water through the natural cycle.',
+    tamilText: 'நெடுங்கடலும் தன்நீர்மை குன்றும் தடிந்தெழிலி\nதான்நல்கா தாகி விடின்.',
+    tamilExplanation: '[AI DRAFT — verify] மேகம் நீரைத் தடுத்து மழையாகக் கொடுக்காமல் போனால், பெரிய கடல்கூட தன் நீர்மையிலிருந்து குறையும் என்பது கருத்து.',
+    englishExplanation: '[AI DRAFT — verify] Even the vast ocean will diminish in its nature if the clouds withhold their rain and give nothing back.',
     themes: ['Ethics', 'மழை'],
-    citation: 'திருக்குறள் 17',
+    citation: 'வான்சிறப்பு — குறள் 17',
+    sourceUrl: 'https://www.projectmadurai.org/pm_etexts/utf8/pmuni0001.html',
     sourceStatus: 'Source: Project Madurai',
   },
   {
@@ -295,14 +276,12 @@ const LITERATURE_ENTRIES: LiteratureEntry[] = [
     author: 'திருவள்ளுவர்',
     category: 'அறத்துப்பால்',
     chapter: 'வான்சிறப்பு',
-    tamilText:
-      'சிறப்பொடு பூசனை செல்லாது வானம்\nவறக்குமேல் வானோர்க்கும் ஈண்டு.',
-    tamilExplanation:
-      'மழை இல்லாமல் போனால், உலகில் நடைபெறும் வழிபாடுகளும் சிறப்புகளும் பாதிக்கப்படும்.',
-    englishExplanation:
-      'When rain fails, even important social and religious activities are affected.',
+    tamilText: 'சிறப்பொடு பூசனை செல்லாது வானம்\nவறக்குமேல் வானோர்க்கும் ஈண்டு.',
+    tamilExplanation: '[AI DRAFT — verify] மழை பெய்யாமல் வானம் வறண்டுவிட்டால், இங்கே வானோர்க்குரிய சிறப்பான வழிபாடுகளும் நடைபெறாது என்பது கருத்து.',
+    englishExplanation: '[AI DRAFT — verify] If the sky becomes barren without rain, even the special rites and offerings to the gods here will cease.',
     themes: ['Ethics', 'மழை'],
-    citation: 'திருக்குறள் 18',
+    citation: 'வான்சிறப்பு — குறள் 18',
+    sourceUrl: 'https://www.projectmadurai.org/pm_etexts/utf8/pmuni0001.html',
     sourceStatus: 'Source: Project Madurai',
   },
   {
@@ -311,14 +290,12 @@ const LITERATURE_ENTRIES: LiteratureEntry[] = [
     author: 'திருவள்ளுவர்',
     category: 'அறத்துப்பால்',
     chapter: 'வான்சிறப்பு',
-    tamilText:
-      'தானம் தவம்இரண்டும் தங்கா வியன்உலகம்\nவானம் வழங்கா தெனின்.',
-    tamilExplanation:
-      'மழை இல்லாமல் போனால், தானம் மற்றும் தவம் போன்ற அறச்செயல்களும் நிலைத்திருக்க முடியாது.',
-    englishExplanation:
-      'Without rain, charitable and spiritual practices also become difficult to sustain.',
+    tamilText: 'தானம் தவம்இரண்டும் தங்கா வியன்உலகம்\nவானம் வழங்கா தெனின்.',
+    tamilExplanation: '[AI DRAFT — verify] மழை பொழியாவிட்டால், அகன்ற இவ்வுலகில் தானமும் தவமும் என்னும் இரண்டும் நிலைத்து நிற்காது என்பது கருத்து.',
+    englishExplanation: '[AI DRAFT — verify] If the sky does not give rain, neither charity nor penance can endure in this vast world.',
     themes: ['Ethics', 'மழை'],
-    citation: 'திருக்குறள் 19',
+    citation: 'வான்சிறப்பு — குறள் 19',
+    sourceUrl: 'https://www.projectmadurai.org/pm_etexts/utf8/pmuni0001.html',
     sourceStatus: 'Source: Project Madurai',
   },
   {
@@ -327,236 +304,221 @@ const LITERATURE_ENTRIES: LiteratureEntry[] = [
     author: 'திருவள்ளுவர்',
     category: 'அறத்துப்பால்',
     chapter: 'வான்சிறப்பு',
-    tamilText:
-      'நீர்இன்று அமையாது உலகெனின் யார்யார்க்கும்\nவான்இன்று அமையாது ஒழுக்கு.',
-    tamilExplanation:
-      'நீர் இல்லாமல் உலகம் இயங்க முடியாது; அதுபோல மழை இல்லாமல் உலக வாழ்க்கையின் ஒழுங்கும் நிலைக்காது.',
-    englishExplanation:
-      'The world cannot exist without water, and human life cannot function properly without rain.',
+    tamilText: 'நீர்இன்று அமையாது உலகெனின் யார்யார்க்கும்\nவான்இன்று அமையாது ஒழுக்கு.',
+    tamilExplanation: '[AI DRAFT — verify] நீர் இல்லாமல் உலகம் இயங்காது என்றால், மழை இல்லாமல் யாருடைய நல்லொழுக்கமும் நிலைத்து நிற்காது என்பது கருத்து.',
+    englishExplanation: '[AI DRAFT — verify] Just as the world cannot function without water, no one\'s virtuous conduct can endure without rain.',
     themes: ['Ethics', 'மழை'],
-    citation: 'திருக்குறள் 20',
+    citation: 'வான்சிறப்பு — குறள் 20',
+    sourceUrl: 'https://www.projectmadurai.org/pm_etexts/utf8/pmuni0001.html',
     sourceStatus: 'Source: Project Madurai',
   },
 ];
 
-const EXAMPLE_SEARCHES = [
-  'Friendship',
-  'Learning',
-  'Ethics',
-  'நட்பு',
-  'கல்வி',
-  'மழை',
-  'குறள் 20',
-];
-
-const THEMES = [
-  'All',
-  'Ethics',
-  'Friendship',
-  'Learning',
-  'Leadership',
-  'Love',
-  'மழை',
-];
+const EXAMPLE_SEARCHES = ['Friendship', 'Learning', 'Ethics', 'நட்பு', 'கல்வி'];
+const THEMES = ['Ethics', 'Friendship', 'Learning', 'Leadership', 'Love'];
 
 function App() {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedTheme, setSelectedTheme] = useState('All');
+  const [query, setQuery] = useState('');
+  const [activeTheme, setActiveTheme] = useState<string | null>(null);
 
-  const filteredEntries = LITERATURE_ENTRIES.filter((entry) => {
-    const query = searchQuery.trim().toLowerCase();
+  const normalizedQuery = query.trim().toLowerCase();
 
-    const matchesSearch =
-      query === '' ||
-      entry.tamilText.toLowerCase().includes(query) ||
-      entry.tamilExplanation.toLowerCase().includes(query) ||
-      entry.englishExplanation.toLowerCase().includes(query) ||
-      entry.workTitle.toLowerCase().includes(query) ||
-      entry.author.toLowerCase().includes(query) ||
-      entry.category.toLowerCase().includes(query) ||
-      entry.chapter.toLowerCase().includes(query) ||
-      entry.citation.toLowerCase().includes(query) ||
-      entry.id.toString() === query;
+  const filteredResults = LITERATURE_ENTRIES.filter((entry) => {
+    const matchesQuery =
+      normalizedQuery === '' ||
+      entry.tamilText.toLowerCase().includes(normalizedQuery) ||
+      entry.tamilExplanation.toLowerCase().includes(normalizedQuery) ||
+      entry.englishExplanation.toLowerCase().includes(normalizedQuery) ||
+      entry.workTitle.toLowerCase().includes(normalizedQuery) ||
+      entry.author.toLowerCase().includes(normalizedQuery) ||
+      entry.category.toLowerCase().includes(normalizedQuery) ||
+      entry.chapter.toLowerCase().includes(normalizedQuery) ||
+      entry.themes.some((t) => t.toLowerCase().includes(normalizedQuery));
 
     const matchesTheme =
-      selectedTheme === 'All' || entry.themes.includes(selectedTheme);
+      activeTheme === null || entry.themes.includes(activeTheme);
 
-    return matchesSearch && matchesTheme;
+    return matchesQuery && matchesTheme;
   });
 
-  const clearSearch = () => {
-    setSearchQuery('');
-    setSelectedTheme('All');
+  const handleExampleClick = (term: string) => {
+    setQuery(term);
+  };
+
+  const handleThemeClick = (theme: string) => {
+    setActiveTheme((prev) => (prev === theme ? null : theme));
+  };
+
+  const handleClear = () => {
+    setQuery('');
+    setActiveTheme(null);
   };
 
   return (
     <div className="app">
-      <header className="hero">
-        <div className="hero-content">
-          <p className="eyebrow">TAMIL SCHOLAR AI</p>
+      <header className="header">
+        <h1>Tamil Scholar AI</h1>
+        <p className="subtitle">
+          Discover Classical Tamil literature with trusted sources.
+        </p>
+      </header>
 
-          <h1>
-            Explore Tamil
-            <br />
-            Literature
-          </h1>
+      <section className="search-section">
+        <input
+          type="text"
+          className="search-box"
+          placeholder="Search in Tamil or English..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
 
-          <p className="hero-description">
-            Search Tamil literary works and discover simple explanations,
-            themes, and references.
-          </p>
-
-          <div className="search-box">
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(event) => setSearchQuery(event.target.value)}
-              placeholder="Search in Tamil or English..."
-              aria-label="Search Tamil literature"
-            />
-
-            <button onClick={clearSearch}>Clear</button>
-          </div>
-
-          <div className="example-searches">
-            <span>Try:</span>
-
-            {EXAMPLE_SEARCHES.map((example) => (
+        <div className="button-group">
+          <span className="group-label">Example searches:</span>
+          <div className="button-row">
+            {EXAMPLE_SEARCHES.map((term) => (
               <button
-                key={example}
-                onClick={() => setSearchQuery(example)}
+                key={term}
+                className="pill-button"
+                onClick={() => handleExampleClick(term)}
               >
-                {example}
+                {term}
               </button>
             ))}
           </div>
         </div>
-      </header>
 
-      <main className="main-content">
-        <section className="theme-section">
-          <h2>Browse by theme</h2>
-
-          <div className="theme-buttons">
+        <div className="button-group">
+          <span className="group-label">Themes:</span>
+          <div className="button-row">
             {THEMES.map((theme) => (
               <button
                 key={theme}
-                className={selectedTheme === theme ? 'active' : ''}
-                onClick={() => setSelectedTheme(theme)}
+                className={
+                  activeTheme === theme
+                    ? 'pill-button pill-button-active'
+                    : 'pill-button'
+                }
+                onClick={() => handleThemeClick(theme)}
               >
                 {theme}
               </button>
             ))}
           </div>
-        </section>
+        </div>
 
-        <section className="results-section">
-          <div className="results-header">
-            <h2>Literature</h2>
-            <span>{filteredEntries.length} result(s)</span>
-          </div>
+        {(query !== '' || activeTheme !== null) && (
+          <button className="clear-button" onClick={handleClear}>
+            Clear search and filters
+          </button>
+        )}
+      </section>
 
-          {filteredEntries.length === 0 ? (
-            <div className="no-results">
-              <h3>No results found</h3>
-              <p>
-                Try another Tamil or English word, theme, or Kural number.
-              </p>
-
-              <button onClick={clearSearch}>Clear search</button>
-            </div>
-          ) : (
-            <div className="literature-list">
-              {filteredEntries.map((entry) => (
-                <article className="literature-card" key={entry.id}>
-                  <div className="card-top">
-                    <div>
-                      <p className="card-category">{entry.category}</p>
-                      <h3>{entry.citation}</h3>
-                    </div>
-
-                    <span className="kural-number">
-                      #{entry.id}
+      <section className="results-section">
+        {filteredResults.length === 0 ? (
+          <p className="no-results">No results found. Try a different search term or theme.</p>
+        ) : (
+          <div className="results-list">
+            {filteredResults.map((entry) => (
+              <article key={entry.id} className="result-card">
+                <p className="tamil-text">
+                  {entry.tamilText.split('\n').map((line, i) => (
+                    <span key={i}>
+                      {line}
+                      <br />
                     </span>
-                  </div>
+                  ))}
+                </p>
 
-                  <div className="tamil-text">
-                    {entry.tamilText.split('\n').map((line, index) => (
-                      <div key={index}>{line}</div>
-                    ))}
-                  </div>
+                <div className="explanation-block">
+                  <h3>Tamil Explanation</h3>
+                  <p>{entry.tamilExplanation}</p>
+                </div>
 
-                  <div className="explanation-grid">
-                    <div>
-                      <h4>தமிழ் விளக்கம்</h4>
-                      <p>{entry.tamilExplanation}</p>
-                    </div>
+                <div className="explanation-block">
+                  <h3>English Explanation</h3>
+                  <p>{entry.englishExplanation}</p>
+                </div>
 
-                    <div>
-                      <h4>English Explanation</h4>
-                      <p>{entry.englishExplanation}</p>
-                    </div>
-                  </div>
+                <div className="tags-row">
+                  {entry.themes.map((theme) => (
+                    <span key={theme} className="theme-tag">
+                      {theme}
+                    </span>
+                  ))}
+                </div>
 
-                  <div className="themes">
-                    {entry.themes.map((theme) => (
-                      <button
-                        key={theme}
-                        onClick={() => setSelectedTheme(theme)}
-                      >
-                        {theme}
-                      </button>
-                    ))}
-                  </div>
+                <div className="meta-row">
+  <span><strong>Work:</strong> {entry.workTitle}</span>
 
-                  <div className="reference">
-                    <div>
-                      <strong>Work:</strong> {entry.workTitle}
-                    </div>
+  <span><strong>Author:</strong> {entry.author}</span>
 
-                    <div>
-                      <strong>Author:</strong> {entry.author}
-                    </div>
+  <span><strong>Category:</strong> {entry.category}</span>
 
-                    <div>
-                      <strong>Chapter:</strong> {entry.chapter}
-                    </div>
+  <span><strong>Chapter:</strong> {entry.chapter}</span>
 
-                    <div>
-                      <strong>Reference:</strong> {entry.citation}
-                    </div>
-                  </div>
+  <span><strong>Reference:</strong> {entry.citation}</span>
 
-                  <p className="source-status">
-                    {entry.sourceStatus}
-                  </p>
-                </article>
-              ))}
-            </div>
-          )}
-        </section>
+  <span>
+    <strong>Source:</strong>{" "}
+    <a
+      href={entry.sourceUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="source-link"
+    >
+      View Project Madurai
+    </a>
+  </span>
+</div>
 
-        <section className="about-section">
-          <h2>About Tamil Scholar AI</h2>
+<p className="source-link-container">
+  <a
+    href={entry.sourceUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="source-link"
+  >
+    View Project Madurai
+  </a>
+</p>
 
-          <p>
-            Tamil Scholar AI is a learning-focused project for exploring
-            Tamil literature through searchable passages, simple
-            explanations, and references.
-          </p>
+<button
+  type="button"
+  className="copy-citation-button"
+  onClick={() => copyCitation(entry)}
+>
+  Copy Citation
+</button>
 
-          <p>
-            The first twenty Thirukkural verses in this version use the
-            Unicode Tamil text from Project Madurai. The explanations are
-            simplified learning explanations and should not be treated as
-            authoritative scholarly translations.
-          </p>
+<div className="source-status">
+  {entry.sourceStatus}
+</div>
 
-          <p>
-            Source: Project Madurai — திருக்குறள் by திருவள்ளுவர்.
-          </p>
-        </section>
-      </main>
+                
+              </article>
+            ))}
+          </div>
+        )}
+      </section>
+
+      <section className="about-section">
+        <h2>About</h2>
+        <p>
+          Tamil Scholar AI currently displays the first twenty verses of the
+          Thirukkural — Chapter 1, கடவுள் வாழ்த்து (Kurals 1–10), and Chapter 2,
+          வான்சிறப்பு (Kurals 11–20). The original Tamil verse text for each
+          entry has been copied exactly from Project Madurai's Unicode
+          Thirukkural edition.
+        </p>
+        <p>
+          The Tamil and English explanations shown alongside each verse were
+          drafted for this app and have not yet been reviewed by a Tamil
+          literature expert. Every citation, verse, translation, and
+          explanation on this page must be checked against a trusted,
+          authoritative source before this content is published or relied
+          upon in any way.
+        </p>
+      </section>
     </div>
   );
 }
